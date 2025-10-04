@@ -2,9 +2,9 @@ FROM chinachu/mirakurun:latest
 
 ENV DEV="git autoconf automake cmake libtool"
 
-RUN apt update && \
-apt upgrade -y && \
-apt -y install $DEV && \
+RUN apt-get update && \
+apt-get upgrade -y && \
+apt-get -y install $DEV && \
 
 cd /tmp && \
 git clone https://github.com/tsunoda14/libyakisoba.git && \
@@ -42,8 +42,8 @@ cd recpt1/recpt1 && \
 make && \
 make install
 
-apt remove -y $DEV && \
-    apt autoremove -y && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm -rf /tmp/*
+apt-get remove -y $DEV && \
+apt-get autoremove -y && \
+apt-get clean && \
+rm -rf /var/lib/apt/lists/* && \
+rm -rf /tmp/*
