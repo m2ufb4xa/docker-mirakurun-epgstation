@@ -5,7 +5,7 @@ ENV DEV="git autoconf automake cmake libtool"
 RUN apt update && \
     apt upgrade -y && \
     apt install -y $DEV && \
-
+\
     cd /tmp && \
     git clone https://github.com/tsunoda14/libyakisoba.git && \
     cd libyakisoba && \
@@ -15,7 +15,7 @@ RUN apt update && \
     ../configure --sysconfdir=/usr/local/etc && \
     make && \
     make install && \
-
+\
     cd /tmp && \
     git clone https://github.com/tsunoda14/libsobacas.git && \
     cd libsobacas && \
@@ -25,7 +25,7 @@ RUN apt update && \
     ../configure --sysconfdir=/usr/local/etc && \
     make && \
     make install && \
-
+\
     cd /tmp && \
     git clone https://github.com/tsukumijima/libaribb25.git && \
     cd libaribb25 && \
@@ -33,7 +33,7 @@ RUN apt update && \
     cd build && \
     make && \
     make install && \
-
+\
     cd /tmp && \
     git clone https://github.com/stz2012/recpt1.git && \
     cd recpt1/recpt1 && \
@@ -41,7 +41,7 @@ RUN apt update && \
     ./configure && \
     make && \
     make install && \
-
+\
     apt -y remove $DEV && \
     apt autoremove -y && \
     apt clean && \
